@@ -14,13 +14,13 @@ public class ColorAndFont extends Application {
         // Create a pane to hold the text nodes.
         Pane pane = new Pane();
         
-        // Run a for-loop and set the texts in random colors.
+        // Run a for-loop and set the texts in random colors and other properties.
+        // x and y represent the (x,y) coordinates of the starting point for the text.
         for(int i = 0, x = 0, y = 60; i < 5; i++, x += 50) {
             //A random color.
             Color color = new Color(Math.random(), Math.random(), Math.random(), Math.random());
             
             // Text to display.
-            // x and y represents the (x,y) coordinates of the starting point for the text.
             Text text = new Text(x, y, "JavaFX");
             text.setFont(Font.font("Times Roman", FontWeight.BOLD, FontPosture.ITALIC, 24)); // Set text font, font weight, posture and size.
             text.setRotate(90);
