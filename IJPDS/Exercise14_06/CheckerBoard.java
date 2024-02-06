@@ -20,28 +20,25 @@ import javafx.stage.Stage;
 public class CheckerBoard extends Application {
     @Override
     public void start(Stage primaryStage) {
-        final int NUMBER_OF_SQUARES = 10; // A 10x10 checkerboard = 100 squares.
+        final int NUMBER_OF_ROWS = 10; // Rows of a 10x10 checkerboard.
+        final int NUMBER_OF_COLUMNS = 10; // Columns of a 10x10 checkerboard.
         Color squareColor; // Variable to hold the color of the square.
         
         // Create a grid pane to hold the different squares.
         GridPane gridPane = new GridPane();
         
-        // Knowing the checkerboard has 100 squares, run a nested for-loop
-        // to create each square, set its color and place it in the grid.
-        for(int row = 0; row < NUMBER_OF_SQUARES; row++) {            
-            for(int column = 0; column < NUMBER_OF_SQUARES; column++) {
+        // Run a nested for-loop to create each square, 
+        // set its color and place it in the grid.
+        for(int row = 0; row < NUMBER_OF_ROWS; row++) {            
+            for(int column = 0; column < NUMBER_OF_COLUMNS; column++) {
                 // Create a new 50x50 pixels rectangle (a square).
                 Rectangle rectangle = new Rectangle(50, 50);
                 
-                // Alternate the color of the squares.
-                if((row % 2) == (column % 2)) {
-                    squareColor = Color.WHITE;
-                } else {
-                    squareColor = Color.BLACK;
-                }
+                // Alternate square colors.
+                squareColor = ((row % 2) == (column % 2)) ? Color.WHITE : Color.BLACK;
     
-                rectangle.setFill(squareColor);
-                gridPane.add(rectangle, row, column);
+                rectangle.setFill(squareColor); // Set the square's color.
+                gridPane.add(rectangle, row, column); // Add square to grid pane.
             }
         }
         
