@@ -31,7 +31,7 @@ public class MoveRectangle extends Application {
             // Check the pane boundaries to keep the rectangle within.
             // Left hand of the main && operator checks for boundaries on the x-axis,
             // and the right hand checks for boundaries along the y-axis.
-            if(((e.getX() > 0) && ((e.getX()) <= pane.getWidth())) && ((e.getY() > 0) && (e.getY() <= pane.getHeight()))) {
+            if(((e.getX() > 0) && ((e.getX()) < pane.getWidth())) && ((e.getY() > 0) && (e.getY() < pane.getHeight()))) {
                 rectangle.setX(e.getX() - 30); // Center rectangle at x-coordinate and ...
                 rectangle.setY(e.getY() - 15); //... y-coordinate of mouse pointer.
             }
